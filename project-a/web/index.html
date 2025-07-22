@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Web App</title>
+</head>
+<body>
+  <h1>Hello from project-a!</h1>
+  <script>
+    fetch('/api/hello')
+      .then(res => res.json())
+      .then(data => document.body.innerHTML += '<p>' + data.message + '</p>')
+      .catch(err => console.error('API error', err));
+  </script>
+</body>
+</html>
