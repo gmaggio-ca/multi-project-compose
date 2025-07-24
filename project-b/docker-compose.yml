@@ -5,7 +5,7 @@ services:
     build: ./web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.projectb-web.rule=Host(`project-b.local`) && PathPrefix(`/`)"
+      - "traefik.http.routers.projectb-web.rule=Host(`project-b.localhost`) && PathPrefix(`/`)"
       - "traefik.http.routers.projectb-web.entrypoints=web"
       - "traefik.http.services.projectb-web.loadbalancer.server.port=80"
     networks:
@@ -15,7 +15,7 @@ services:
     build: ./api
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.projectb-api.rule=Host(`project-b.local`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.projectb-api.rule=Host(`project-b.localhost`) && PathPrefix(`/api`)"
       - "traefik.http.routers.projectb-api.entrypoints=web"
       - "traefik.http.services.projectb-api.loadbalancer.server.port=3000"
     networks:
